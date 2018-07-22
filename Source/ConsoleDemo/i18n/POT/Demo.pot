@@ -1,0 +1,17 @@
+#: K:\Workspaces\Work__i18n\NGettext.Samples\Source\ConsoleDemo\DemoMessages.cs:16
+msgid "Hello, World!"
+msgstr ""
+
+#: K:\Workspaces\Work__i18n\NGettext.Samples\Source\ConsoleDemo\DemoMessages.cs:21
+#, csharp-format
+msgid "You have {0} apple."
+msgid_plural "You have {0} apples."
+msgstr[0] ""
+msgstr[1] ""
+
+#: K:\Workspaces\Work__i18n\NGettext.Samples\Source\ConsoleDemo\DemoMessages.cs:26
+#, csharp-format
+msgid "You have {0} tree."
+msgid_plural "You have {0} trees."
+msgstr[0] ""
+msgstr[1] ""

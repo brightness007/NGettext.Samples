@@ -1,0 +1,5 @@
+/Source/ConsoleDemo/bin/*
+/Source/ConsoleDemo/obj/*
+/Source/ConsoleDemo/.vs/*
+/Source/ConsoleDemo/i18n/Strings.filelist
+/Source/ConsoleDemo/i18n/**/*.mo
