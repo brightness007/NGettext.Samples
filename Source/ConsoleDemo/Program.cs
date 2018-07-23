@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
+using System.Text;
 
 namespace ConsoleDemo
 {
@@ -9,10 +11,13 @@ namespace ConsoleDemo
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.Unicode;
+
             List<Tuple<string, ICatalog>> catalogs = new List<Tuple<string, ICatalog>>
             {
                 new Tuple<string, ICatalog>("default", new Catalog("Demo", @".\Locales")),
-                new Tuple<string, ICatalog>("en-US", new Catalog("Demo", @".\Locales", new CultureInfo("en-US")))
+                new Tuple<string, ICatalog>("en-US", new Catalog("Demo", @".\Locales", new CultureInfo("en-US"))),
+                new Tuple<string, ICatalog>("zh-CN", new Catalog("Demo", @".\Locales", new CultureInfo("zh-CN"))),
             };
 
             foreach(var catalog in catalogs)
@@ -27,6 +32,14 @@ namespace ConsoleDemo
                 Console.WriteLine(msg.TREE_COUNT_MESAGE(2));    // Not Translated, Fallback to English
 
                 Console.WriteLine();
+            }
+
+            Console.WriteLine("Locale: (Stream)");
+            using (var stream = new FileStream(@".\Locales\zh_CN\LC_MESSAGES\Demo.mo", FileMode.Open, FileAccess.Read))
+            {
+                ICatalog catalog = new Catalog(stream, new CultureInfo("zh-CN"));
+                DemoMessages msg = new DemoMessages(catalog);
+                Console.WriteLine(msg.APPLE_COUNT_MESAGE(2));
             }
         }
     }
