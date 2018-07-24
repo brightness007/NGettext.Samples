@@ -8,4 +8,9 @@
 /Source/AndroidDemo/bin/*
 /Source/AndroidDemo/obj/*
 /Source/AndroidDemo/.vs/*
+/Source/iPhoneDemo/iPhoneDemo/Resources/Locales/**/*.mo
+/Source/iPhoneDemo/iPhoneDemo/bin/*
+/Source/iPhoneDemo/iPhoneDemo/obj/*
+/Source/iPhoneDemo/.vs/*
 *.user
+*.suo
